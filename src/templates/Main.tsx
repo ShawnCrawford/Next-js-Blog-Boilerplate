@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Navbar } from '../navigation/Navbar';
@@ -17,29 +18,34 @@ const Main = (props: IMainProps) => (
     <div className="max-w-screen-md mx-auto">
       <div className="border-b border-gray-300">
         <div className="pt-16 pb-8">
+          <div>
+            <Navbar>
+              <li className="mr-6">
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+              </li>
+              <li className="mr-6">
+                <Link href="/about/">
+                  <a>About</a>
+                </Link>
+              </li>
+              <li className="mr-6">
+                <a href="https://github.com/ixartz/Next-js-Blog-Boilerplate">
+                  GitHub
+                </a>
+                {/* Black Navbar block nav-block in main.css */}
+              </li>
+              <li className="nav-block"></li>
+            </Navbar>
+          </div>
           <div className="font-semibold text-3xl text-gray-900">
             {AppConfig.title}
           </div>
           <div className="text-xl">{AppConfig.description}</div>
         </div>
         <div>
-          <Navbar>
-            <li className="mr-6">
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li className="mr-6">
-              <Link href="/about/">
-                <a>About</a>
-              </Link>
-            </li>
-            <li className="mr-6">
-              <a href="https://github.com/ixartz/Next-js-Blog-Boilerplate">
-                GitHub
-              </a>
-            </li>
-          </Navbar>
+          <Image src="/music-video-promo.gif" height={350} width={400} />
         </div>
       </div>
 
